@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "iron_fence",
+  "version": "1.0.2",
+  "name": "iron_fence",
+  "description": "Add iron fences",
+  "authors": [
+    "XGJS, MCreator"
+  ],
+  "contact": {
+    "homepage": "https://mcreator.net",
+    "sources": ""
+  },
+  "license": "MIT License",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.mcreator.ironfence.IronFenceMod"
+    ],
+    "client": [
+      "net.mcreator.ironfence.ClientInit"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  }
+}
