@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "121",
+        "121"
+    ],
+    "key": {
+        "1": {
+            "item": "minecraft:iron_ingot"
+        },
+        "2": {
+            "item": "minecraft:iron_nugget"
+        }
+    },
+    "result": {
+        "item": "iron_fence:iron_fence",
+        "count": 3
+    }
+}
