@@ -15,9 +15,6 @@ import net.mcreator.ironfence.IronFenceMod;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 
-import net.mcreator.ironfence.block.IronFenceBlock;
-import net.mcreator.ironfence.block.IronFenceGateBlock;
-
 public class IronFenceModItems {
 	public static Item IRON_FENCE;
 	public static Item IRON_FENCE_GATE;
