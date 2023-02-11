@@ -13,18 +13,22 @@ import net.mcreator.ironfence.IronFenceMod;
 
 import net.mcreator.ironfence.block.IronFenceBlock;
 import net.mcreator.ironfence.block.IronFenceGateBlock;
+import net.mcreator.ironfence.block.NetheriteFenceBlock;;
 
 public class IronFenceModBlocks {
 	public static Block IRON_FENCE;
 	public static Block IRON_FENCE_GATE;
+	public static Block NETHERITE_FENCE;
 
 	public static void load() {
 		IRON_FENCE = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(IronFenceMod.MODID, "iron_fence"), new IronFenceBlock());
 		IRON_FENCE_GATE = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(IronFenceMod.MODID, "iron_fence_gate"), new IronFenceGateBlock());
+		NETHERITE_FENCE = Registry.register(BuiltInRegistries.BLOCK, new ResourceLocation(IronFenceMod.MODID, "netherite_fence"), new NetheriteFenceBlock());
 	}
 
 	public static void clientLoad() {
 		IronFenceBlock.clientInit();
 		IronFenceGateBlock.clientInit();
+		NetheriteFenceBlock.clientInit();
 	}
 }
