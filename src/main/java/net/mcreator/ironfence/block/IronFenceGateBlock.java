@@ -26,7 +26,7 @@ import java.util.Collections;
 
 public class IronFenceGateBlock extends FenceGateBlock {
 	public static BlockBehaviour.Properties PROPERTIES = FabricBlockSettings.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
-			.isRedstoneConductor((bs, br, bp) -> false);
+			.isRedstoneConductor((bs, br, bp) -> false).requiresCorrectToolForDrops();
 	private static SoundEvent soundEvent = SoundEvents.FENCE_GATE_CLOSE;
 	private static SoundEvent soundEvent2 = SoundEvents.FENCE_GATE_OPEN;
 

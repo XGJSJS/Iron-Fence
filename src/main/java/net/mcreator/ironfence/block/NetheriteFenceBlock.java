@@ -24,7 +24,7 @@ import java.util.Collections;
 
 public class NetheriteFenceBlock extends FenceBlock {
 	public static BlockBehaviour.Properties PROPERTIES = FabricBlockSettings.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).noOcclusion()
-			.isRedstoneConductor((bs, br, bp) -> false);
+			.isRedstoneConductor((bs, br, bp) -> false).requiresCorrectToolForDrops();
 
 	public NetheriteFenceBlock() {
 		super(PROPERTIES);
