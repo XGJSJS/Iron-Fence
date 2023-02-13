@@ -6,7 +6,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = 'iron_fence-1.19.3-fabric'
-version = '0.2.1'
+version = '0.3.0'
 group = 'com.yourname.modid'
 actualmodid = 'iron_fence'
 
