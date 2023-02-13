@@ -1,0 +1,12 @@
+English | [简体中文](README_Zh.md)
+
+Iron Fence is a minecraft mod that add some blocks
+## License
+MIT License
+
+Copyright (c) 2023 XGJSJS
+## Use
+Fabric
+Minecraft Version: 1.19.2 1.19.3
+## For development
+Run `gradlew build` directly

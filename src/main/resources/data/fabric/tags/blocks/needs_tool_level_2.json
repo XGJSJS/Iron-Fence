@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "iron_fence:iron_fence_gate",
     "iron_fence:iron_fence"
   ]
 }
