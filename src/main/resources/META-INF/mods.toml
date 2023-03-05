@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[44,)"
+license="MIT License"
+
+[[mods]]
+modId="iron_fence"
+version="0.1.0"
+displayName="Iron Fence"
+credits=""
+displayURL=""
+authors="XGJS"
+description='''
+Add iron fence
+'''
+
+[[dependencies.iron_fence]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+
