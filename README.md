@@ -6,7 +6,7 @@ MIT License
 
 Copyright (c) 2023 XGJSJS
 ## Use
-Fabric
+Fabric/Forge
 Minecraft Version: 1.19.2 1.19.3
 ## For development
 Run `gradlew build` directly

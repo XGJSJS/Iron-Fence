@@ -11,10 +11,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.network.FriendlyByteBuf;
 
 import net.mcreator.ironfence.init.IronFenceModItems;
@@ -27,7 +29,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.AbstractMap;
 
-@Mod("iron_fence")
+@Mod(IronFenceMod.MODID)
 public class IronFenceMod {
 	public static final Logger LOGGER = LogManager.getLogger(IronFenceMod.class);
 	public static final String MODID = "iron_fence";
@@ -40,6 +42,7 @@ public class IronFenceMod {
 		IronFenceModBlocks.REGISTRY.register(bus);
 		IronFenceModItems.REGISTRY.register(bus);
 
+		bus.addListener(this::buildContents);
 	}
 
 	private static final String PROTOCOL_VERSION = "1";
@@ -72,4 +75,13 @@ public class IronFenceMod {
 			workQueue.removeAll(actions);
 		}
 	}
+
+	private void buildContents(CreativeModeTabEvent.BuildContents event) {
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(IronFenceModItems.IRON_FENCE);
+			event.accept(IronFenceModItems.IRON_FENCE_GATE);
+			event.accept(IronFenceModItems.NETHERITE_FENCE);
+			event.accept(IronFenceModItems.NETHERITE_FENCE_GATE);
+        }
+    }
 }
