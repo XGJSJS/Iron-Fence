@@ -1,5 +1,5 @@
 
-package net.mcreator.ironfence.block;
+package net.xgjs.ironfence.block;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -20,11 +20,6 @@ public class NetheriteFenceBlock extends FenceBlock {
 	public NetheriteFenceBlock() {
 		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops().noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false).dynamicShape());
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
 	}
 
 	@Override

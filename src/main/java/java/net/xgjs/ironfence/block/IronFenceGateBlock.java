@@ -1,5 +1,5 @@
 
-package net.mcreator.ironfence.block;
+package net.xgjs.ironfence.block;
 
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
@@ -12,26 +12,21 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvents;
+import net.xgjs.ironfence.IronFenceMod;
 
 import java.util.List;
 import java.util.Collections;
 
-public class NetheriteFenceGateBlock extends FenceGateBlock {
-	public NetheriteFenceGateBlock() {
+public class IronFenceGateBlock extends FenceGateBlock {
+	public IronFenceGateBlock() {
 		super(BlockBehaviour.Properties.of(Material.METAL).sound(SoundType.METAL).strength(1f, 10f).requiresCorrectToolForDrops().noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false).dynamicShape(), SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN);
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
+				.isRedstoneConductor((bs, br, bp) -> false).dynamicShape(), IronFenceMod.IRON);
 	}
 
 	@Override
 	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
 		if (player.getInventory().getSelected().getItem() instanceof TieredItem tieredItem)
-			return tieredItem.getTier().getLevel() >= 4;
+			return tieredItem.getTier().getLevel() >= 2;
 		return false;
 	}
 
