@@ -1,5 +1,5 @@
 {
-  "parent": "block/fence_side",
+  "parent": "block/template_fence_gate",
   "textures": {
     "texture": "minecraft:block/netherite_block",
     "particle": "minecraft:block/netherite_block"
