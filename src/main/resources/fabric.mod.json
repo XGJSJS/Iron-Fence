@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "iron_fence",
+	"version": "${version}",
+	"name": "Iron Fence",
+	"description": "Add 2 different kinds of fences",
+	"authors": [
+		"XGJS"
+	],
+	"contact": {
+		"homepage": "https://space.bilibili.com/1328815668",
+		"sources": "https://github.com/XGJSJS/Iron-Fence"
+	},
+	"license": "MIT License",
+	"icon": "assets/iron_fence/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.xgjs.iron_fence.IronFenceMod"
+		],
+		"client": [
+			"net.xgjs.iron_fence.IronFenceModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
