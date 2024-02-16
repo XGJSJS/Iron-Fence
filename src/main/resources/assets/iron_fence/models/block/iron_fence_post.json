@@ -1,8 +1,0 @@
-{
-  "parent": "block/fence_post",
-  "textures": {
-    "texture": "minecraft:block/iron_block",
-    "particle": "minecraft:block/iron_block"
-  },
-  "render_type": "solid"
-}
