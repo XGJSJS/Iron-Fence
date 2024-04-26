@@ -13,7 +13,7 @@
     }
   },
   "result": {
-    "item": "iron_fence:iron_fence_gate",
+    "id": "iron_fence:iron_fence_gate",
     "count": 1
   }
 }
