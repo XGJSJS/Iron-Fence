@@ -7,8 +7,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class IronFenceMod implements ModInitializer {
-    public static final Logger LOGGER = LoggerFactory.getLogger("iron_fence");
 	public static final String MOD_ID = "iron_fence";
+	public static final String MOD_NAME = "Iron Fence";
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_NAME);
 
 	@Override
 	public void onInitialize() {
