@@ -2,5 +2,11 @@
   "block.iron_fence.iron_fence_gate": "Iron Fence Gate",
   "block.iron_fence.iron_fence": "Iron Fence",
   "block.iron_fence.netherite_fence": "Netherite Fence",
-  "block.iron_fence.netherite_fence_gate": "Netherite Fence Gate"
+  "block.iron_fence.netherite_fence_gate": "Netherite Fence Gate",
+  "block.iron_fence.diamond_fence_gate": "Diamond Fence Gate",
+  "block.iron_fence.diamond_fence": "Diamond Fence",
+  "block.iron_fence.gold_fence_gate": "Gold Fence Gate",
+  "block.iron_fence.gold_fence": "Gold Fence",
+  "block.iron_fence.emerald_fence_gate": "Emerald Fence Gate",
+  "block.iron_fence.emerald_fence": "Emerald Fence"
 }

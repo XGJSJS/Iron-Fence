@@ -5,39 +5,38 @@ import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
-import net.xgjs.iron_fence.IronFenceMod;
 
 public class IronFenceModItems {
-	public static final Item IRON_FENCE = blockItem(IronFenceModBlocks.IRON_FENCE);
-	public static final Item IRON_FENCE_GATE = blockItem(IronFenceModBlocks.IRON_FENCE_GATE);
-	public static final Item NETHERITE_FENCE = blockItem(IronFenceModBlocks.NETHERITE_FENCE);
-	public static final Item NETHERITE_FENCE_GATE = blockItem(IronFenceModBlocks.NETHERITE_FENCE_GATE);
-	public static void load() {
-		register("iron_fence", IRON_FENCE);
-		register("iron_fence_gate", IRON_FENCE_GATE);
-		register("netherite_fence", NETHERITE_FENCE);
-		register("netherite_fence_gate", NETHERITE_FENCE_GATE);
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
-			content.add(item(IRON_FENCE));
-			content.add(item(IRON_FENCE_GATE));
-			content.add(item(NETHERITE_FENCE));
-			content.add(item(NETHERITE_FENCE_GATE));
-		});
+	public static final Item IRON_FENCE;
+	public static final Item IRON_FENCE_GATE;
+	public static final Item NETHERITE_FENCE;
+	public static final Item NETHERITE_FENCE_GATE;
+	public static final Item DIAMOND_FENCE;
+	public static final Item DIAMOND_FENCE_GATE;
+	public static final Item GOLD_FENCE;
+	public static final Item GOLD_FENCE_GATE;
+	public static final Item EMERALD_FENCE;
+	public static final Item EMERALD_FENCE_GATE;
+
+	public static void load() {}
+
+	private static Item register(Block block) {
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> content.add(block));
+		return Registry.register(Registries.ITEM, Registries.BLOCK.getId(block), new BlockItem(block, new Item.Settings()));
 	}
 
-	public static Item blockItem(Block block) {
-		return new BlockItem(block, new Item.Settings());
-	}
-
-	public static ItemStack item(Item item) {
-		return new ItemStack(item);
-	}
-
-	private static void register(String id, Item item) {
-		Registry.register(Registries.ITEM, Identifier.of(IronFenceMod.MOD_ID, id), item);
+	static {
+		IRON_FENCE = register(IronFenceModBlocks.IRON_FENCE);
+		IRON_FENCE_GATE = register(IronFenceModBlocks.IRON_FENCE_GATE);
+		NETHERITE_FENCE = register(IronFenceModBlocks.NETHERITE_FENCE);
+		NETHERITE_FENCE_GATE = register(IronFenceModBlocks.NETHERITE_FENCE_GATE);
+		DIAMOND_FENCE = register(IronFenceModBlocks.DIAMOND_FENCE);
+		DIAMOND_FENCE_GATE = register(IronFenceModBlocks.DIAMOND_FENCE_GATE);
+		GOLD_FENCE = register(IronFenceModBlocks.GOLD_FENCE);
+		GOLD_FENCE_GATE = register(IronFenceModBlocks.GOLD_FENCE_GATE);
+		EMERALD_FENCE = register(IronFenceModBlocks.EMERALD_FENCE);
+		EMERALD_FENCE_GATE = register(IronFenceModBlocks.EMERALD_FENCE_GATE);
 	}
 }

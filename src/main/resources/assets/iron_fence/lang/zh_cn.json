@@ -2,5 +2,11 @@
   "block.iron_fence.iron_fence_gate": "铁栅栏门",
   "block.iron_fence.iron_fence": "铁栅栏",
   "block.iron_fence.netherite_fence": "下界合金栅栏",
-  "block.iron_fence.netherite_fence_gate": "下界合金栅栏门"
+  "block.iron_fence.netherite_fence_gate": "下界合金栅栏门",
+  "block.iron_fence.diamond_fence_gate": "钻石栅栏门",
+  "block.iron_fence.diamond_fence": "钻石栅栏",
+  "block.iron_fence.gold_fence_gate": "金栅栏门",
+  "block.iron_fence.gold_fence": "金栅栏",
+  "block.iron_fence.emerald_fence_gate": "绿宝石栅栏门",
+  "block.iron_fence.emerald_fence": "绿宝石栅栏"
 }
