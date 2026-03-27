@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "121",
+        "121"
+    ],
+    "key": {
+        "1": "minecraft:gold_ingot",
+        "2": "minecraft:gold_nugget"
+    },
+    "result": {
+        "id": "iron_fence:gold_fence",
+        "count": 3
+    }
+}
