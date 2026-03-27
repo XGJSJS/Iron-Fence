@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "121",
+        "121"
+    ],
+    "key": {
+        "1": "minecraft:copper_nugget",
+        "2": "minecraft:copper_ingot"
+    },
+    "result": {
+        "id": "iron_fence:copper_fence_gate",
+        "count": 3
+    }
+}

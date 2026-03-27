@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "iron_fence:iron_fence",
+    "iron_fence:netherite_fence",
+    "iron_fence:diamond_fence",
+    "iron_fence:gold_fence",
+    "iron_fence:emerald_fence",
+    "iron_fence:copper_fence"
+  ]
+}
