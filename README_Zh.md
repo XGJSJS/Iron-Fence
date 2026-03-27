@@ -6,7 +6,7 @@ MIT License
 
 Copyright (c) 2023 XGJSJS
 ## 使用
-Fabric/Forge
-我的世界版本： 1.19.2 1.19.3 1.19.4
+Fabric/Forge/Neoforge
+我的世界版本： 1.19.2 1.19.3 1.19.4, 1.20.1, 1.20.4, 1.20.6, 1.21.1, 1.21.11, 26.1
 ## 开发
 直接运行`gradlew build`
