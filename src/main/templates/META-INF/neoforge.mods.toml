@@ -8,7 +8,7 @@ displayURL="https://space.bilibili.com/1328815668"
 logoFile="icon.png"
 authors="XGJS"
 description='''
-Add 6 different kinds of fences.
+Add many different kinds of fences.
 '''
 [[dependencies.${mod_id}]]
     modId="neoforge"
