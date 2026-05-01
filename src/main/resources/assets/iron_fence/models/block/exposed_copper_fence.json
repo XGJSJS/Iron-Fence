@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_side",
+  "textures": {
+    "texture": "minecraft:block/exposed_copper",
+    "particle": "minecraft:block/exposed_copper"
+  }
+}

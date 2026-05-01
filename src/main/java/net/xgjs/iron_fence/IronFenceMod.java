@@ -31,8 +31,8 @@ public class IronFenceMod {
 			event.accept(IronFenceModBlocks.GOLD_FENCE_GATE);
 			event.accept(IronFenceModBlocks.EMERALD_FENCE);
 			event.accept(IronFenceModBlocks.EMERALD_FENCE_GATE);
-			event.accept(IronFenceModBlocks.COPPER_FENCE);
-			event.accept(IronFenceModBlocks.COPPER_FENCE_GATE);
+			IronFenceModBlocks.COPPER_FENCES.forEach(event::accept);
+			IronFenceModBlocks.COPPER_FENCE_GATES.forEach(event::accept);
 		}
 	}
 }

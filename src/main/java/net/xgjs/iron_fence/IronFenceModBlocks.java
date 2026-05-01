@@ -1,7 +1,5 @@
 package net.xgjs.iron_fence;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -25,11 +23,11 @@ public class IronFenceModBlocks {
 	public static final DeferredBlock<Block> GOLD_FENCE_GATE;
 	public static final DeferredBlock<Block> EMERALD_FENCE;
 	public static final DeferredBlock<Block> EMERALD_FENCE_GATE;
-	public static final DeferredBlock<Block> COPPER_FENCE;
-	public static final DeferredBlock<Block> COPPER_FENCE_GATE;
+	public static final WeatheringDeferredCopperBlocks COPPER_FENCES;
+	public static final WeatheringDeferredCopperBlocks COPPER_FENCE_GATES;
 
 	public static DeferredBlock<Block> register(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
-        return BLOCKS.register(id, name -> factory.apply(settings.setId(ResourceKey.create(Registries.BLOCK, name))));
+        return BLOCKS.registerBlock(id, factory, () -> settings);
 	}
 
 	public static DeferredBlock<Block> registerFence(String id, Block copy) {
@@ -51,7 +49,11 @@ public class IronFenceModBlocks {
 		GOLD_FENCE_GATE = registerFenceGate("gold", Blocks.GOLD_BLOCK);
 		EMERALD_FENCE = registerFence("emerald", Blocks.EMERALD_BLOCK);
 		EMERALD_FENCE_GATE = registerFenceGate("emerald", Blocks.EMERALD_BLOCK);
-		COPPER_FENCE = registerFence("copper", Blocks.COPPER_BLOCK);
-		COPPER_FENCE_GATE = registerFenceGate("copper", Blocks.COPPER_BLOCK);
+		COPPER_FENCES = WeatheringDeferredCopperBlocks.create("copper_fence",
+				BLOCKS, FenceBlock::new, WeatheringCopperFenceBlock::new,
+                _ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+		COPPER_FENCE_GATES = WeatheringDeferredCopperBlocks.create("copper_fence_gate",
+				BLOCKS, settings -> new FenceGateBlock(METAL, settings), WeatheringCopperFenceGateBlock::new,
+				_ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
 	}
 }
