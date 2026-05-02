@@ -13,8 +13,6 @@ public class IronFenceMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Iron Fence load");
-
 		IronFenceModBlocks.load();
 		IronFenceModItems.load();
 	}

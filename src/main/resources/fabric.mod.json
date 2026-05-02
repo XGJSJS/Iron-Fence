@@ -3,7 +3,7 @@
 	"id": "iron_fence",
 	"version": "${version}",
 	"name": "Iron Fence",
-	"description": "Add 6 different kinds of fences",
+	"description": "Add many different kinds of fences",
 	"authors": [
 		"XGJS"
 	],
