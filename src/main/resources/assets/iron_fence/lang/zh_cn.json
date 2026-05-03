@@ -24,5 +24,8 @@
   "block.iron_fence.oxidized_copper_fence_gate": "氧化的铜栅栏门",
   "block.iron_fence.waxed_exposed_copper_fence_gate": "涂蜡的斑驳铜栅栏门",
   "block.iron_fence.waxed_weathered_copper_fence_gate": "涂蜡的锈蚀铜栅栏门",
-  "block.iron_fence.waxed_oxidized_copper_fence_gate": "涂蜡的氧化铜栅栏门"
+  "block.iron_fence.waxed_oxidized_copper_fence_gate": "涂蜡的氧化铜栅栏门",
+
+  "modmenu.nameTranslation.iron_fence": "铁栅栏",
+  "modmenu.descriptionTranslation.iron_fence": "添加许多不同种类的栅栏和栅栏门。"
 }

@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"homepage": "https://space.bilibili.com/1328815668",
-		"sources": "https://github.com/XGJSJS/Iron-Fence"
+		"sources": "https://github.com/XGJSJS/Iron-Fence",
+		"issues": "https://github.com/XGJSJS/Iron-Fence/issues"
 	},
 	"license": "MIT License",
 	"icon": "assets/iron_fence/icon.png",
@@ -23,8 +24,5 @@
 		"fabricloader": "*",
 		"minecraft": "~26.1",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

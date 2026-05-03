@@ -24,5 +24,8 @@
   "block.iron_fence.oxidized_copper_fence_gate": "Oxidized Copper Fence Gate",
   "block.iron_fence.waxed_exposed_copper_fence_gate": "Waxed Exposed Copper Fence Gate",
   "block.iron_fence.waxed_weathered_copper_fence_gate": "Waxed Weathered Copper Fence Gate",
-  "block.iron_fence.waxed_oxidized_copper_fence_gate": "Waxed Oxidized Copper Fence Gate"
+  "block.iron_fence.waxed_oxidized_copper_fence_gate": "Waxed Oxidized Copper Fence Gate",
+
+  "modmenu.nameTranslation.iron_fence": "Iron Fence",
+  "modmenu.descriptionTranslation.iron_fence": "Add many different kinds of fences and fence gates."
 }

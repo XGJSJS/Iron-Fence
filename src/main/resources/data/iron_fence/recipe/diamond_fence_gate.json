@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#c:fence_gates",
+    "minecraft:diamond"
+  ],
+  "result": {
+    "id": "iron_fence:diamond_fence_gate",
+    "count": 1
+  }
+}
