@@ -1,4 +1,4 @@
-name: Build With JDK21
+name: Build With JDK25
 
 on:
   push:
