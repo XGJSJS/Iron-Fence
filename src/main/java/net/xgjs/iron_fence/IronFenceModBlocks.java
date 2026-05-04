@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 public class IronFenceModBlocks {
 	public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(IronFenceMod.MOD_ID);
-	public static final WoodType METAL = new WoodType("metal", BlockSetType.IRON, SoundType.METAL, SoundType.METAL, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN);
+	public static final WoodType METAL;
 	public static final DeferredBlock<Block> IRON_FENCE;
 	public static final DeferredBlock<Block> IRON_FENCE_GATE;
 	public static final DeferredBlock<Block> NETHERITE_FENCE;
@@ -39,6 +39,8 @@ public class IronFenceModBlocks {
 	}
 
 	static {
+		METAL = WoodType.register(new WoodType("metal", BlockSetType.IRON, SoundType.METAL, SoundType.METAL, SoundEvents.FENCE_GATE_CLOSE, SoundEvents.FENCE_GATE_OPEN));
+
 		IRON_FENCE = registerFence("iron", Blocks.IRON_BLOCK);
 		IRON_FENCE_GATE = registerFenceGate("iron", Blocks.IRON_BLOCK);
 		NETHERITE_FENCE = registerFence("netherite", Blocks.NETHERITE_BLOCK);

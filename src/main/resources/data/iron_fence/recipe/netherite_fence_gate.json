@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": "#minecraft:netherite_tool_materials",
+  "base": "iron_fence:diamond_fence_gate",
+  "result": {
+    "id": "iron_fence:netherite_fence_gate"
+  },
+  "template": "minecraft:netherite_upgrade_smithing_template"
+}
