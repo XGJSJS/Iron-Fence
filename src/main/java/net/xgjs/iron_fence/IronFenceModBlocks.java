@@ -53,9 +53,9 @@ public class IronFenceModBlocks {
 		EMERALD_FENCE_GATE = registerFenceGate("emerald", Blocks.EMERALD_BLOCK);
 		COPPER_FENCES = WeatheringDeferredCopperBlocks.create("copper_fence",
 				BLOCKS, FenceBlock::new, WeatheringCopperFenceBlock::new,
-                _ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+                state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK.weathering().pick(state)));
 		COPPER_FENCE_GATES = WeatheringDeferredCopperBlocks.create("copper_fence_gate",
 				BLOCKS, settings -> new FenceGateBlock(METAL, settings), WeatheringCopperFenceGateBlock::new,
-				_ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK.weathering().pick(state)));
 	}
 }
