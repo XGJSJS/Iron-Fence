@@ -1,9 +1,8 @@
 package net.xgjs.iron_fence.init;
 
 import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.resources.Identifier;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -27,14 +26,22 @@ public class IronFenceModBlocks {
 	public static final Block GOLD_FENCE_GATE;
 	public static final Block EMERALD_FENCE;
 	public static final Block EMERALD_FENCE_GATE;
-	public static final WeatheringCopperBlocks COPPER_FENCES;
-	public static final WeatheringCopperBlocks COPPER_FENCE_GATES;
+	public static final WeatheringCopperCollection<Block> COPPER_FENCES;
+	public static final WeatheringCopperCollection<Block> COPPER_FENCE_GATES;
 
 	public static void load() {}
 
-	public static Block register(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
-		final ResourceKey<Block> key = ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(IronFenceMod.MOD_ID, id));
-        return Blocks.register(key, factory, settings);
+	private static Identifier create(String baseName) {
+		return Identifier.fromNamespaceAndPath(IronFenceMod.MOD_ID, baseName);
+	}
+
+	public static Block register(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
+		final Identifier id = create(name);
+        return register(BlockItemId.create(id, id), factory, settings);
+	}
+
+	public static Block register(BlockItemId id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
+		return Blocks.register(id.block(), factory, settings);
 	}
 
 	public static Block registerFence(String id, Block copy) {
@@ -43,6 +50,10 @@ public class IronFenceModBlocks {
 
 	public static Block registerFenceGate(String id, Block copy) {
 		return register(id + "_fence_gate", settings -> new FenceGateBlock(METAL, settings), BlockBehaviour.Properties.ofFullCopy(copy));
+	}
+
+	public static WeatheringCopperCollection<BlockItemId> createSimpleCopper(final String baseName) {
+		return WeatheringCopperCollection.prefixWithState(WeatheringCopperCollection.create(baseName)).map(id -> BlockItemId.create(create(id), create(id)));
 	}
 
 	static {
@@ -56,12 +67,12 @@ public class IronFenceModBlocks {
 		GOLD_FENCE_GATE = registerFenceGate("gold", Blocks.GOLD_BLOCK);
 		EMERALD_FENCE = registerFence("emerald", Blocks.EMERALD_BLOCK);
 		EMERALD_FENCE_GATE = registerFenceGate("emerald", Blocks.EMERALD_BLOCK);
-		COPPER_FENCES = WeatheringCopperBlocks.create("copper_fence",
-				IronFenceModBlocks::register, FenceBlock::new, WeatheringCopperFenceBlock::new,
-				_ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
-		COPPER_FENCE_GATES = WeatheringCopperBlocks.create("copper_fence_gate",
-				IronFenceModBlocks::register, p -> new FenceGateBlock(METAL, p), WeatheringCopperFenceGateBlock::new,
-				_ -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+		COPPER_FENCES = WeatheringCopperCollection.registerBlocks(createSimpleCopper("copper_fence"),
+				IronFenceModBlocks::register, (state, p) -> new FenceBlock(p), WeatheringCopperFenceBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK.weathering().pick(state)));
+		COPPER_FENCE_GATES = WeatheringCopperCollection.registerBlocks(createSimpleCopper("copper_fence_gate"),
+				IronFenceModBlocks::register, (state, p) -> new FenceGateBlock(METAL, p), WeatheringCopperFenceGateBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK.weathering().pick(state)));
 
 		OxidizableBlocksRegistry.registerWeatheringCopperBlocks(COPPER_FENCES);
 		OxidizableBlocksRegistry.registerWeatheringCopperBlocks(COPPER_FENCE_GATES);
