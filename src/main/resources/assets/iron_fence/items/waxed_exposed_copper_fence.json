@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "iron_fence:block/exposed_copper_fence_inventory"
+  }
+}

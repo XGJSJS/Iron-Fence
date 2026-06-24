@@ -3,13 +3,14 @@
 	"id": "iron_fence",
 	"version": "${version}",
 	"name": "Iron Fence",
-	"description": "Add 6 different kinds of fences",
+	"description": "Add many different kinds of fences",
 	"authors": [
 		"XGJS"
 	],
 	"contact": {
 		"homepage": "https://space.bilibili.com/1328815668",
-		"sources": "https://github.com/XGJSJS/Iron-Fence"
+		"sources": "https://github.com/XGJSJS/Iron-Fence",
+		"issues": "https://github.com/XGJSJS/Iron-Fence/issues"
 	},
 	"license": "MIT License",
 	"icon": "assets/iron_fence/icon.png",
@@ -20,12 +21,8 @@
 		]
 	},
 	"depends": {
-		"fabricloader": ">=0.18.0",
+		"fabricloader": "*",
 		"minecraft": "~1.21.11",
-		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

@@ -14,7 +14,6 @@ public class IronFenceMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Iron Fence load");
-		LOGGER.info("[Iron Fence]This is an experimental version, please backup before use.");
 
 		IronFenceModBlocks.load();
 		IronFenceModItems.load();

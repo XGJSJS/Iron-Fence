@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "#c:fences",
+    "#c:fences",
+    "#c:fences",
+    "minecraft:emerald",
+    "minecraft:emerald",
+    "minecraft:emerald"
+  ],
+  "result": {
+    "id": "iron_fence:emerald_fence",
+    "count": 3
+  }
+}

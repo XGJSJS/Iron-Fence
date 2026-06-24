@@ -1,5 +1,6 @@
 package net.xgjs.iron_fence.init;
 
+import net.fabricmc.fabric.api.registry.OxidizableBlocksRegistry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
@@ -9,6 +10,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.xgjs.iron_fence.IronFenceMod;
+import net.xgjs.iron_fence.block.WeatheringCopperFenceBlock;
+import net.xgjs.iron_fence.block.WeatheringCopperFenceGateBlock;
 
 import java.util.function.Function;
 
@@ -24,8 +27,8 @@ public class IronFenceModBlocks {
 	public static final Block GOLD_FENCE_GATE;
 	public static final Block EMERALD_FENCE;
 	public static final Block EMERALD_FENCE_GATE;
-	public static final Block COPPER_FENCE;
-	public static final Block COPPER_FENCE_GATE;
+	public static final WeatheringCopperBlocks COPPER_FENCES;
+	public static final WeatheringCopperBlocks COPPER_FENCE_GATES;
 
 	public static void load() {}
 
@@ -53,7 +56,14 @@ public class IronFenceModBlocks {
 		GOLD_FENCE_GATE = registerFenceGate("gold", Blocks.GOLD_BLOCK);
 		EMERALD_FENCE = registerFence("emerald", Blocks.EMERALD_BLOCK);
 		EMERALD_FENCE_GATE = registerFenceGate("emerald", Blocks.EMERALD_BLOCK);
-		COPPER_FENCE = registerFence("copper", Blocks.COPPER_BLOCK);
-		COPPER_FENCE_GATE = registerFenceGate("copper", Blocks.COPPER_BLOCK);
+		COPPER_FENCES = WeatheringCopperBlocks.create("copper_fence",
+				IronFenceModBlocks::register, FenceBlock::new, WeatheringCopperFenceBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+		COPPER_FENCE_GATES = WeatheringCopperBlocks.create("copper_fence_gate",
+				IronFenceModBlocks::register, p -> new FenceGateBlock(METAL, p), WeatheringCopperFenceGateBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+
+		OxidizableBlocksRegistry.registerCopperBlockSet(COPPER_FENCES);
+		OxidizableBlocksRegistry.registerCopperBlockSet(COPPER_FENCE_GATES);
 	}
 }

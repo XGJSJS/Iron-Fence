@@ -17,8 +17,6 @@ public class IronFenceModItems {
 	public static final Item GOLD_FENCE_GATE;
 	public static final Item EMERALD_FENCE;
 	public static final Item EMERALD_FENCE_GATE;
-	public static final Item COPPER_FENCE;
-	public static final Item COPPER_FENCE_GATE;
 
 	public static void load() {}
 
@@ -39,7 +37,7 @@ public class IronFenceModItems {
 		GOLD_FENCE_GATE = register(IronFenceModBlocks.GOLD_FENCE_GATE);
 		EMERALD_FENCE = register(IronFenceModBlocks.EMERALD_FENCE);
 		EMERALD_FENCE_GATE = register(IronFenceModBlocks.EMERALD_FENCE_GATE);
-		COPPER_FENCE = register(IronFenceModBlocks.COPPER_FENCE);
-		COPPER_FENCE_GATE = register(IronFenceModBlocks.COPPER_FENCE_GATE);
+		IronFenceModBlocks.COPPER_FENCES.forEach(IronFenceModItems::register);
+		IronFenceModBlocks.COPPER_FENCE_GATES.forEach(IronFenceModItems::register);
 	}
 }
