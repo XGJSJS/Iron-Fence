@@ -1,0 +1,22 @@
+{
+    "values": {
+        "iron_fence:copper_fence": {
+            "next_oxidation_stage": "iron_fence:exposed_copper_fence"
+        },
+        "iron_fence:exposed_copper_fence": {
+            "next_oxidation_stage": "iron_fence:weathered_copper_fence"
+        },
+        "iron_fence:weathered_copper_fence": {
+            "next_oxidation_stage": "iron_fence:oxidized_copper_fence"
+        },
+        "iron_fence:copper_fence_gate": {
+            "next_oxidation_stage": "iron_fence:exposed_copper_fence_gate"
+        },
+        "iron_fence:exposed_copper_fence_gate": {
+            "next_oxidation_stage": "iron_fence:weathered_copper_fence_gate"
+        },
+        "iron_fence:weathered_copper_fence_gate": {
+            "next_oxidation_stage": "iron_fence:oxidized_copper_fence_gate"
+        }
+    }
+}

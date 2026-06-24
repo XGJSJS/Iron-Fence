@@ -1,0 +1,28 @@
+{
+  "values": {
+    "iron_fence:copper_fence": {
+      "waxed": "iron_fence:waxed_copper_fence"
+    },
+    "iron_fence:exposed_copper_fence": {
+      "waxed": "iron_fence:waxed_exposed_copper_fence"
+    },
+    "iron_fence:weathered_copper_fence": {
+      "waxed": "iron_fence:waxed_weathered_copper_fence"
+    },
+    "iron_fence:oxidized_copper_fence": {
+      "waxed": "iron_fence:waxed_oxidized_copper_fence"
+    },
+    "iron_fence:copper_fence_gate": {
+      "waxed": "iron_fence:waxed_copper_fence_gate"
+    },
+    "iron_fence:exposed_copper_fence_gate": {
+      "waxed": "iron_fence:waxed_exposed_copper_fence_gate"
+    },
+    "iron_fence:weathered_copper_fence_gate": {
+      "waxed": "iron_fence:waxed_weathered_copper_fence_gate"
+    },
+    "iron_fence:oxidized_copper_fence_gate": {
+      "waxed": "iron_fence:waxed_oxidized_copper_fence_gate"
+    }
+  }
+}

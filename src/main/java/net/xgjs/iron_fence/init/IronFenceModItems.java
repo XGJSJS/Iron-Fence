@@ -1,10 +1,11 @@
-package net.xgjs.iron_fence;
+package net.xgjs.iron_fence.init;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.xgjs.iron_fence.IronFenceMod;
 
 public class IronFenceModItems {
 	public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(IronFenceMod.MOD_ID);
@@ -18,8 +19,6 @@ public class IronFenceModItems {
 	public static final DeferredItem<BlockItem> GOLD_FENCE_GATE;
 	public static final DeferredItem<BlockItem> EMERALD_FENCE;
 	public static final DeferredItem<BlockItem> EMERALD_FENCE_GATE;
-	public static final DeferredItem<BlockItem> COPPER_FENCE;
-	public static final DeferredItem<BlockItem> COPPER_FENCE_GATE;
 
 	private static DeferredItem<BlockItem> register(DeferredBlock<Block> block) {
 		return ITEMS.registerSimpleBlockItem(block);
@@ -36,7 +35,7 @@ public class IronFenceModItems {
 		GOLD_FENCE_GATE = register(IronFenceModBlocks.GOLD_FENCE_GATE);
 		EMERALD_FENCE = register(IronFenceModBlocks.EMERALD_FENCE);
 		EMERALD_FENCE_GATE = register(IronFenceModBlocks.EMERALD_FENCE_GATE);
-		COPPER_FENCE = register(IronFenceModBlocks.COPPER_FENCE);
-		COPPER_FENCE_GATE = register(IronFenceModBlocks.COPPER_FENCE_GATE);
+		IronFenceModBlocks.COPPER_FENCES.forEach(IronFenceModItems::register);
+		IronFenceModBlocks.COPPER_FENCE_GATES.forEach(IronFenceModItems::register);
 	}
 }

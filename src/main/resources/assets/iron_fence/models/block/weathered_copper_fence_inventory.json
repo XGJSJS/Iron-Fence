@@ -1,0 +1,7 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "minecraft:block/weathered_copper",
+    "particle": "minecraft:block/weathered_copper"
+  }
+}

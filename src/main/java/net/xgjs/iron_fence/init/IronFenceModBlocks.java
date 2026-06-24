@@ -1,4 +1,4 @@
-package net.xgjs.iron_fence;
+package net.xgjs.iron_fence.init;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -9,6 +9,10 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import net.xgjs.iron_fence.IronFenceMod;
+import net.xgjs.iron_fence.block.WeatheringCopperFenceBlock;
+import net.xgjs.iron_fence.block.WeatheringCopperFenceGateBlock;
+import net.xgjs.iron_fence.block.WeatheringDeferredCopperBlocks;
 
 import java.util.function.Function;
 
@@ -25,8 +29,8 @@ public class IronFenceModBlocks {
 	public static final DeferredBlock<Block> GOLD_FENCE_GATE;
 	public static final DeferredBlock<Block> EMERALD_FENCE;
 	public static final DeferredBlock<Block> EMERALD_FENCE_GATE;
-	public static final DeferredBlock<Block> COPPER_FENCE;
-	public static final DeferredBlock<Block> COPPER_FENCE_GATE;
+	public static final WeatheringDeferredCopperBlocks COPPER_FENCES;
+	public static final WeatheringDeferredCopperBlocks COPPER_FENCE_GATES;
 
 	public static DeferredBlock<Block> register(String id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties settings) {
         return BLOCKS.register(id, name -> factory.apply(settings.setId(ResourceKey.create(Registries.BLOCK, name))));
@@ -51,7 +55,11 @@ public class IronFenceModBlocks {
 		GOLD_FENCE_GATE = registerFenceGate("gold", Blocks.GOLD_BLOCK);
 		EMERALD_FENCE = registerFence("emerald", Blocks.EMERALD_BLOCK);
 		EMERALD_FENCE_GATE = registerFenceGate("emerald", Blocks.EMERALD_BLOCK);
-		COPPER_FENCE = registerFence("copper", Blocks.COPPER_BLOCK);
-		COPPER_FENCE_GATE = registerFenceGate("copper", Blocks.COPPER_BLOCK);
+		COPPER_FENCES = WeatheringDeferredCopperBlocks.create("copper_fence",
+				IronFenceModBlocks.BLOCKS, FenceBlock::new, WeatheringCopperFenceBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
+		COPPER_FENCE_GATES = WeatheringDeferredCopperBlocks.create("copper_fence_gate",
+				IronFenceModBlocks.BLOCKS, p -> new FenceGateBlock(METAL, p), WeatheringCopperFenceGateBlock::new,
+				state -> BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK));
 	}
 }
